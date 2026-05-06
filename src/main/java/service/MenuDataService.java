@@ -27,7 +27,7 @@ public class MenuDataService {
             while (true){
                 String str = br.readLine();
                 if(str == null) break;
-//                System.out.println(str);
+                System.out.println(str);
                 String[] arr = str.split(",");
                 list.add(new MenuDataVO(Integer.parseInt(arr[0]), arr[1],
                         Integer.parseInt(arr[2]), Integer.parseInt(arr[3]), Boolean.parseBoolean(arr[4])));
