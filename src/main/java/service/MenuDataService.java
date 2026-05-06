@@ -2,10 +2,7 @@ package service;
 
 import vo.MenuDataVO;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 
 public class MenuDataService {
@@ -27,7 +24,7 @@ public class MenuDataService {
             while (true){
                 String str = br.readLine();
                 if(str == null) break;
-                System.out.println(str);
+//                System.out.println(str);
                 String[] arr = str.split(",");
                 list.add(new MenuDataVO(Integer.parseInt(arr[0]), arr[1],
                         Integer.parseInt(arr[2]), Integer.parseInt(arr[3]), Boolean.parseBoolean(arr[4])));
@@ -46,4 +43,16 @@ public class MenuDataService {
     }
 
 
+    public void saveMenuData() {
+        try (FileWriter fw = new FileWriter("menu.csv");
+            PrintWriter pw = new PrintWriter(fw)){
+
+            pw.println("id,name,price,category,isAvailable");
+            list.forEach(t-> pw.println(t.toString()));
+            System.out.println("메뉴 정보 세이브 완료");
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
