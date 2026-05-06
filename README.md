@@ -13,13 +13,13 @@ controller
   | ...
   |
 main
-  ├ menuDataMain
+  ├ MenuDataMain
 service
-  ├ menuDataService
+  ├ MenuDataService
 exception
-  ├ menuDataException
+  ├ MenuDataException
  vo
-  └ menuDataVO
+  └ MenuDataVO
 ```
 ---
 
@@ -34,7 +34,13 @@ exception
 
 ### vo
 - 메뉴 데이터 객체
-- **메뉴 번호**, **메뉴명**, **가격**, **카테고리**, **판매여부**
+- **메뉴 번호**, **메뉴명**, **가격**, **카테고리**, **판매여부(true/false)**
+- 카테고리 : 
+  - 1.메인요리  
+  - 2.사이드
+  - 3.음료
+  - 4.주류, 
+  - 5.디저트
 
 ### service
 - 메뉴 추가, 삭제 수정, 조회 로직 처리
