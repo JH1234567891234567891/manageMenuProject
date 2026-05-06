@@ -22,7 +22,7 @@ public class MenuDataMain {
 
                 Controller controller = HandlerMapping.getInstance().createController(menu);
                 if(controller != null) {controller.execute(sc); break;}
-                if(menu==0) {System.out.println("프로그램을 종료합니다."); break;}
+                if(menu==0) {System.out.println("프로그램을 종료합니다......"); break;}
 
             }
 

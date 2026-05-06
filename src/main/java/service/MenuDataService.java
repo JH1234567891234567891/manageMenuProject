@@ -1,5 +1,6 @@
 package service;
 
+import exception.MenuDataException;
 import vo.MenuDataVO;
 
 import java.io.*;
@@ -54,5 +55,19 @@ public class MenuDataService {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+    public boolean isMenuAvailable(int no){
+        if(Math.abs(no)>1) throw new MenuDataException("잘못된 번호를 입력하였습니다 1과 0중에 하나만 입력해주십시오.");
+        return no == 1;
+
+    }
+
+    public boolean addMenuData(MenuDataVO vo) {
+       return list.add(vo);
+    }
+
+    public void isDuplicateMenu(int id) {
+        int idx = list.indexOf(new MenuDataVO(id,null,0,0,true));
+        if(idx == -1) throw new MenuDataException("중복된 메뉴 번호 입니다.");
     }
 }
