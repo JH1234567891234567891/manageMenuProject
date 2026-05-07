@@ -72,7 +72,7 @@ public class MenuDataService {
 
     public void isDuplicateMenu(int id) {
         int idx = list.indexOf(new MenuDataVO(id,null,0,0,true));
-        if(idx == -1) throw new MenuDataException("중복된 메뉴 번호 입니다.");
+        if(idx != -1) throw new MenuDataException("중복된 메뉴 번호 입니다.");
     }
 
     public void isEmpty() {
