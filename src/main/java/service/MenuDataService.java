@@ -78,4 +78,14 @@ public class MenuDataService {
     public void isEmpty() {
         if(list.isEmpty())throw new MenuDataException("메뉴에 데이터가 없습니다.");
     }
+
+    public MenuDataVO searchMenuID(int id) {
+        int idx = list.indexOf(new MenuDataVO(id,null,0,0,true));
+        if(idx == -1) throw new MenuDataException("존재하지 않는 메뉴 번호입니다.");
+        return list.get(idx);
+    }
+
+    public void removeMenuData(MenuDataVO vo) {
+        list.remove(vo);
+    }
 }
