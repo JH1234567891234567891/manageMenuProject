@@ -23,7 +23,7 @@ public class UpdateMenuController implements Controller {
             vo.setPrice(sc.nextInt());sc.nextLine();
             System.out.println("메뉴 카테고리를 입력하세요");
             System.out.println("1.메인요리, 2.사이드, 3.음료, 4.주류 ,5.디저트");
-            vo.setCategory(sc.nextInt());sc.nextLine();
+            vo.setCategory(MenuDataService.getInstance().selectCategory(sc.nextInt()));sc.nextLine();
             System.out.println("메뉴 판매여부를 입력하세요(판매중이면 \"1\", 판매중이 아니면 \"0\")");
             vo.setAvailable(MenuDataService.getInstance().isMenuAvailable(sc.nextInt()));sc.nextLine();
         } catch (MenuDataException e) {

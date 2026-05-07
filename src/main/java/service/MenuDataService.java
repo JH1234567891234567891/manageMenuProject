@@ -88,4 +88,9 @@ public class MenuDataService {
     public void removeMenuData(MenuDataVO vo) {
         list.remove(vo);
     }
+
+    public int selectCategory(int category) {
+        if(category <1 || category > 5) throw new MenuDataException("1~5 숫자를 입력해 주십시오");
+        return category;
+    }
 }
