@@ -16,7 +16,7 @@ public class HandlerMapping {
             case 1 -> controller = new AppendMenuController();
 //            case 2 -> controller = new DeleteMenuController();
 //            case 3 -> controller = new UpdateMenuController();
-//            case 4 -> controller = new PrintAllMenuController();
+            case 4 -> controller = new PrintAllMenuController();
         }
         return controller;
     }
