@@ -23,6 +23,7 @@ public class AppendMenuController implements Controller {
             System.out.println("메뉴 카테고리를 입력하세요");
             System.out.println("1.메인요리, 2.사이드, 3.음료, 4.주류 ,5.디저트");
             int category = sc.nextInt(); sc.nextLine();
+            MenuDataService.getInstance().selectCategory(category);
             System.out.println("메뉴 판매여부를 입력하세요(판매중이면 \"1\", 판매중이 아니면 \"0\")");
             int isAvailable = sc.nextInt(); sc.nextLine();
 
@@ -33,7 +34,7 @@ public class AppendMenuController implements Controller {
             boolean flag = MenuDataService.getInstance().addMenuData(vo);
             System.out.println(flag ? "메뉴 추가 성공" : "메뉴 추가 실패");
         } catch (MenuDataException e) {
-            throw new RuntimeException(e);
+            System.out.println(e.getMessage());
         }
 
         }
