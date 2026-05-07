@@ -13,7 +13,7 @@ public class MenuDataMain {
 
         try {
             while (true){
-                System.out.println("|----- 메뉴 관리 프로그램 -----|");
+                System.out.println("|----- 메뉴 관리 프로그램ㅇㅇ -----|");
                 System.out.println("| 메뉴를 어떻게 관리하시겠습니까?|");
                 System.out.println("| 1. 추가 | 2. 삭제 | 3. 수정 |");
                 System.out.println("| 4. 전체 메뉴 조회  | 0. 종료 |");
@@ -27,7 +27,7 @@ public class MenuDataMain {
             }
 
         } finally {
-            MenuDataService.getInstance().saveMenuData();
+//            MenuDataService.getInstance().saveMenuData();
         }
 
     }

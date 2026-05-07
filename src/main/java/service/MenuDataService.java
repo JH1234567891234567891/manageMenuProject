@@ -57,9 +57,9 @@ public class MenuDataService {
         }
     }
     public boolean isMenuAvailable(int no){
-        if(Math.abs(no)>1) throw new MenuDataException("잘못된 번호를 입력하였습니다 1과 0중에 하나만 입력해주십시오.");
-        return no == 1;
-
+        if(no == 0 || no == 1 ){
+            return no == 1;
+        } else throw new MenuDataException("잘못된 번호를 입력하였습니다 1과 0중에 하나만 입력해주십시오.");
     }
 
     public boolean addMenuData(MenuDataVO vo) {
